@@ -1,0 +1,114 @@
+html{
+	background-color:transparent; 
+	margin: 0;
+	border: 0;
+	padding: 0;
+	overflow: hidden;
+}
+body{
+	background-color:transparent;
+	overflow: hidden;
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+.section1{
+	color: #222;
+	width:296px;
+	font-size: 16px;
+	line-height: 1.5;
+	padding: 8px 10px;
+	position: relative;
+	text-align: left;
+	z-index: 100;
+	background-color: #f9f9f9;
+	border: 1px solid #EAEAEA;
+}
+.section1_title{
+	display: flex;
+	justify-content: space-between;
+}
+.section1_title p{
+	margin: 0;
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+.icon-pocket1{
+	color: rgb(238, 64, 86);
+	font-size: 18px;
+	margin-right: 5px;
+}
+.icon-gengduo{
+	cursor: pointer;
+	font-size: 14px;
+}
+.icon-gengduo:hover{
+	color: #999;
+}
+.search-input{
+	width: 286px;
+	height: 30px;
+	font-size:15px;
+	margin: 0 auto;
+	outline: none;
+	padding-left: 10px;
+}
+.search-input::-webkit-input-placeholder{
+	font-size: 14px;
+	color: #969696;
+}
+.section2{
+	margin-top: 10px;
+	color: #222;
+	width:296px;
+	font-size: 16px;
+	line-height: 1.5;
+	padding: 8px 10px;
+	position: relative;
+	background-color: #f9f9f9;
+	border: 1px solid #EAEAEA;
+}
+.section2 ul{
+	margin: 0;
+	padding: 0;
+display: flex;
+}
+.section2 li a{
+	font-size: 14px;
+	color: #969696;
+}
+.passage {
+	background-color: #f9f9f9;
+	border-top: 1px solid #ddd;
+	height: 110px;
+	display: flex;
+	justify-content: space-between;
+
+}
+.circle-img{
+	height: 92px;
+	box-sizing: border-box;
+	width: 80px;
+	margin: 5px 0 5px 0;
+	border: 1px solid #ddd;
+	align-self: center;
+}
+.circle-content{
+	display: flex;
+	flex-direction: column;
+}
+.circle-content a{
+	font-size: 13px;
+	color: #000;
+}
+.circle-title{
+	max-width: 296px;
+	overflow: hidden;
+	padding: 0 0 10px;
+}
+
+.circle-source{
+	font-size: 11px;
+	color: #999999;
+	margin-top:20px;
+}

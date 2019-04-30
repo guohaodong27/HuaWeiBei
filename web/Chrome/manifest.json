@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "Good Thing",
+  "version": "0.0.1",
+  "description": "Good Thing",
+  "permissions": [
+    "tabs","http://*/*","https://*/*"
+  ],
+  "content_scripts": [{
+    "js": ["1.js"],"matches": ["https://www.baidu.com/"]
+  }],
+  "browser_action": {
+    "default_icon": "popup/img/pocket.png",
+    "default_title": "这是一个示例Chrome插件",
+    "default_popup": "popup/popup.html"
+  }
+
+}

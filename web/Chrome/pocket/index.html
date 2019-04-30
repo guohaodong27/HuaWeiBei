@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>POCKET</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/iconfont.css">
+</head>
+
+<body>
+	<header class="header">
+			<div class="header-icon iconfont"><img src="" alt="">慢 读</div>
+			<div class="header-menu"><a href=""></a>
+				<div><a href="">主页</a></div>
+				<div><a href="">推荐</a></div>
+			</div>
+			<div class="header-submenu">
+				<div class="iconfont"><a href=""> &#xe631; </a> </div>
+				<div class="iconfont"><a href=""> &#xe503; </a> </div>
+				<div class="iconfont"><a href="" class=" header-submenu-last"> &#xe618; </a> </div>
+			</div>
+			<div class="header-user">
+				<div class="iconfont pointer">&#xe63f;</div>
+				<div class="username"></div>
+				<div class="header-user-nav iconfont">&#xe616;</div>
+			</div>
+	</header>
+	<div id="topImg"></div>
+	<div class="wrapper">
+		<div class="menu">
+			<div class="dianjiaoshi"></div>
+			<div class="menu-topnav">
+				<a href="javascript:;"><p>我的列表</p></a>
+				<a href="javascript:;"><p>添加到收藏夹</p></a>
+				<a href="javascript:;"><p>存档列表</p></a>
+			</div>
+			<div class="menu-subnav">
+				<a href="javascript:;"><p>文本</p></a>
+				<a href=""><p>视频</p></a>
+				<a href=""><p>图像</p></a>
+				<a href=""><p>标签</p></a>
+			</div>	
+		</div>
+		<div class="main">
+			<div class="main-header">
+				<div class="main-header-nav">我的列表</div>
+				<div class="main-header-menu">
+					<div class="iconfont">&#xe503; </div>
+					<div class="iconfont"> &#xeb1c;</div>
+				</div>
+			</div>
+			<div class="main-usernav">
+				<div class="main-usernavlist">
+					<div class="main-usernavlist-img"><img src="../img/baidu.png" alt=""></div>
+					<div class="main-usernavlist-main">
+						<div class="main-usernavlist-nav"><div class="main-usernavlist-navweb">w3c官网</div>
+							<div class="main-usernavlist-nav-buttons">
+								<ul class="buttons">
+									<li title="分享"><a class="iconfont" href="#">&#xe72f;</a></li>
+									<li title="存档"><a class="iconfont" href="#">&#xe63a;</a></li>
+									<li title="删除"><a class="iconfont" href="#">&#xe645;</a></li>
+									<li title="编辑标记"><a class="iconfont" href="#">&#xe6c8;</a></li>
+									<li title="添加到收藏夹"><a class="iconfont" href="#">&#xe610;</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="main-usernavlist-web">https://www.w3cschool.cn/</div>
+					</div>
+				</div>
+				<div class="main-usernavlist">
+					<div class="main-usernavlist-img"><img src="../img/w3c.jpg" alt=""></div>
+					<div class="main-usernavlist-main">
+						<div class="main-usernavlist-nav"><div class="main-usernavlist-navweb">百度官网</div>
+							<div class="main-usernavlist-nav-buttons">
+								<ul class="buttons">
+									<li title="分享"><a class="iconfont" href="#">&#xe72f;</a></li>
+									<li title="存档"><a class="iconfont" href="#">&#xe63a;</a></li>
+									<li title="删除"><a class="iconfont" href="#">&#xe645;</a></li>
+									<li title="编辑标记"><a class="iconfont" href="#">&#xe6c8;</a></li>
+									<li title="添加到收藏夹"><a class="iconfont" href="#">&#xe610;</a></li>
+								</ul>
+							</div>
+
+						</div>
+						<div class="main-usernavlist-web">https://www.baidu.com/</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="main1">
+
+
+		</div>
+		<div class="footer">
+			<p></p>
+			<div class="partner"></div>
+			<div class="partner"></div>
+		</div>
+	</div>
+
+	
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+	for (let i=0;i<=2;i++){
+		var a=$(".menu-topnav a");
+		console.log(a);
+		$("a[i]").css("index",i);
+		console.log(a[i]);
+	}
+	$(".menu-topnav a").click(function(){
+		let x=$(".menu-topnav a p");
+		console.log(x);
+		$(x).css("color","#43323240");
+		$(this).children().css("color","orange");
+		console.log(this);
+	});
+
+
+
+
+	$(document).ready(function () {
+		$(".hidden-nav").hide();
+		$(".user").click(function () {
+			$(".hidden-nav").fadeToggle("fast","linear");
+
+		});
+		$(".main-usernavlist").mouseover(function () {
+			$(this).children(".main-usernavlist-main").children(".main-usernavlist-nav").children(".main-usernavlist-nav-buttons").css("display","inline-flex")
+			$(this).children(".main-usernavlist-main").children(".main-usernavlist-nav").children(".main-usernavlist-navweb").css("display","inline-flex");
+			$(this).children(".main-usernavlist-main").children(".main-usernavlist-navweb").css("display","inline-flex");
+			// $(this).children(".userpage-source").children("ul").stop(true,true);
+
+		});
+		$(".main-usernavlist").mouseout(function () {
+			$(this).children(".main-usernavlist-main").children(".main-usernavlist-nav").children(".main-usernavlist-nav-buttons").css("display","none");
+			// $(this).children(".main-usernavlist-main").children(".main-usernavlist-nav").children(".main-usernavlist-navweb").css("display","none");
+			$(this).children(".main-usernavlist-main").children(".main-usernavlist-navweb").css("display","inline-block");
+			// $(this).children(".userpage-source").children("ul").fadeOut("1000");
+			// $(this).children(".userpage-source").children("ul").stop(true,true);
+		});
+	});
+
+	
+
+
+
+
+
+</script>
+</html>

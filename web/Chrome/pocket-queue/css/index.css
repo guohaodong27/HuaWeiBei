@@ -1,0 +1,195 @@
+.wrapper{
+    width: 1400px;
+    margin: 0 auto;
+    display: flex;
+}
+.header{
+    line-height: 45px;
+    width: 100%;
+    /* height: 45px; */
+    vertical-align: middle;
+    border-bottom: 2px solid #b1b0b0;
+}
+.header-icon{
+    display: inline-block;
+    width: 140px;
+    margin-left: 160px;
+    font-size: 18px;
+
+}
+.header-menu{
+    margin-left: 50px;
+    font-size: 16px;
+    display: inline-block;
+}
+.header-menu a{
+    display: inline-block;
+    width: 80px;
+    color:#172c45;
+    text-decoration:none;
+}
+.header-submenu{
+    font-size: 19px;
+    display: inline-block;
+    height: 45px;
+    vertical-align: middle;
+    margin-left: 550px;
+
+}
+.header-submenu div{
+    display: inline-block;
+    width: 30px;
+    cursor: pointer;
+}
+.header-user{
+    font-size: 19px;
+    display: inline-block;
+    height: 45px;
+    width: 200px;
+    vertical-align: middle;
+    float: right;
+}
+.header-submenu-last{
+    padding-right: 15px;
+    border-right:2px solid rgb(49, 46, 48) 
+}
+.header-user div{
+    display: inline-block;
+    cursor: pointer;
+}
+.username{
+    text-align: center;
+    width: 60px;
+
+}
+
+
+
+
+.menu{
+    margin-right:40px;
+    font-size: 19px;
+    color: rgb(39, 30, 30 ,0.43);
+}
+.dianjiaoshi{
+    height: 1px;
+    width: 100%;
+}
+.menu-topnav p{
+    line-height: 35px;
+    vertical-align: middle;
+    white-space: nowrap;
+
+}
+.menu-topnav{
+    margin-top: 30px;
+}
+.menu-subnav{
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 35px;
+    vertical-align: middle
+}
+.main{
+    vertical-align: top;
+}
+.main-header{
+    width: 100%;
+    margin-top: 30px;
+    line-height: 50px;
+    font-size: 35px;
+    display: flex;
+    justify-content: space-between;
+}
+.main-header-nav{
+    display: inline-block;
+}
+
+.main-header-menu{
+    display: inline-block;
+    float: right;
+    font-size: 19px;
+    cursor: pointer;
+}
+.main-header-menu a{
+    width: 20px;
+    color: #000;
+    display: inline-block;
+
+}
+.iconfont a{
+    color: #000;
+
+}
+.main-usernav{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.main-userpage{
+    width: 290px;
+    height: 280px;
+    background-color: #fff;
+    margin: 10px 10px 10px 10px;
+}
+.userpage-title{
+    font-size: 22px;
+    margin: 12px 15px 10px 15px;
+    text-align: left;
+}
+.userpage-img{
+    background-color:#172c45;
+    height: 195px;
+}
+.userpage-source{
+    height: 36px;display: flex;
+    align-items: center;
+}
+.userpage-source span{
+    float: left;
+    margin-left: 20px;
+}
+
+.userpage-source img{
+    width: 16px;
+    height: 16px;
+}
+.buttons{
+   display: flex;
+    margin-left: 64px;
+
+}
+
+.buttons a{
+    color: #b2b2b2;
+    text-decoration: none;
+    margin-right: 5px;
+    font-size: 16px;
+}
+.buttons a:hover{
+    color: #222222;
+}
+
+.hidden-nav{
+    width:90px;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top: 40px ;
+    left: -36px;
+    background-color: #fff;
+    
+}
+.hidden-nav li{
+    text-align: center;
+}
+.hidden-nav li:hover{
+    background-color: #1475ac;
+}
+.user{
+    position: relative;
+}
+.user li a{
+    font-size: 18px;
+    color: #222222;
+}

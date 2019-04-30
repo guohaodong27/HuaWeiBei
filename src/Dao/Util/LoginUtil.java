@@ -1,5 +1,6 @@
 package Dao.Util;
 
+import database.AchieveEntity;
 import database.UserInformationEntity;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -7,8 +8,10 @@ import org.hibernate.Transaction;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import static database.Main.getSession;
 
@@ -123,4 +126,27 @@ public class LoginUtil {
         session.close();
         return List;
     }
-}
+    public static List<UserInformationEntity> getUser(UserInformationEntity userInformationEntity){
+        final Session session = getSession();
+//        Transaction tx = session.beginTransaction();
+
+        //1.创建CriteriaBuilder对象
+        CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
+
+        //2.获取CriteriaQuery对象
+        CriteriaQuery<UserInformationEntity> createQuery = criteriaBuilder.createQuery(UserInformationEntity.class);
+
+        //3.指定根条件
+        Root<UserInformationEntity> root = createQuery.from(UserInformationEntity.class);
+
+        //获取用户id
+        createQuery.where((criteriaBuilder.equal(root.get("email"),userInformationEntity.getEmail())));
+
+        //4执行查询
+        List<UserInformationEntity> List = session.createQuery(createQuery).getResultList();
+        session.close();
+
+        return List;
+    }
+    }
+

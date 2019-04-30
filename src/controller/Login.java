@@ -22,13 +22,19 @@ public class Login {
 
     @RequestMapping(value = "/login",produces = "json/application;charset=UTF-8")
     @ResponseBody
-    public void login(@RequestBody String json) {
+    public String login(@RequestBody String json) {
         System.out.println("11");
         Gson gson = new Gson();
         UserInformationEntity userInformationEntity = gson.fromJson(json, UserInformationEntity.class);
-        LoginUtil loginUtil = new LoginUtil();
-        System.out.println("123");
-        System.out.println(loginUtil.login(userInformationEntity));
+//        LoginUtil loginUtil = new LoginUtil();
+//        System.out.println(loginUtil.login(userInformationEntity));
+        UserInformationEntity data = LoginUtil.getUser(userInformationEntity).get(0);
+        if(data.getPassword().equals(userInformationEntity.getPassword())){
+            return gson.toJson(data);
+        }
+        else{
+            return "null";
+        }
     }
 
 

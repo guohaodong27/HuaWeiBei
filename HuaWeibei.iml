@@ -22,6 +22,7 @@
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map>
+          <unit-entry name="a.xml" value="5c08ec24-d1dd-470c-8d0d-1e5f5f140980" />
           <unit-entry name="hibernate.cfg.xml" value="5c08ec24-d1dd-470c-8d0d-1e5f5f140980" />
         </datasource-map>
         <naming-strategy-map />
@@ -34,11 +35,10 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="11" jdkType="JavaSDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Spring-4.3.18.RELEASE" level="project" />
     <orderEntry type="library" name="Hibernate 5.4.1-5.4.1" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Tomcat 9.0.16" level="application_server_libraries" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>

@@ -1,56 +1,69 @@
 package controller;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonSyntaxException;
 import database.AchieveEntity;
-import org.hibernate.Session;
+import implement.ArticleImpl;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
-import java.util.List;
+import org.springframework.web.bind.annotation.*;
+import service.ArticleService;
 
-import static database.Main.getSession;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 @RequestMapping(value = "/article" ,produces = "application/json;charset=UTF-8")
 public class GetArticle {
+
+    private ArticleService service = new ArticleImpl();
+    private Gson gson = new Gson();
+
     //获取列表
-    @RequestMapping("/fetchAll{userId}")
-//    @ResponseBody
-    public String fetchAll(Model model, @PathVariable String userId) {
-        final Session session = getSession();
-//        Transaction tx = session.beginTransaction();
+    @RequestMapping("/fetchAll")
+    @ResponseBody
+    public String fetchAll(@RequestBody String userId) {
 
-        //1.创建CriteriaBuilder对象
-        CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
+        Map<String,String> condition = new HashMap<>(1);
+        condition = gson.fromJson(userId,condition.getClass());
+//        condition.put("userId",userId);
 
-        //2.获取CriteriaQuery对象
-        CriteriaQuery<AchieveEntity> createQuery = criteriaBuilder.createQuery(AchieveEntity.class);
-
-        //3.指定根条件
-        Root<AchieveEntity> root = createQuery.from(AchieveEntity.class);
-        createQuery.where(criteriaBuilder.equal(root.get("userId"),userId));
-
-        //4执行查询
-        List<AchieveEntity> List = session.createQuery(createQuery).getResultList();
-
-        //5.转换为json
-        Gson gson = new Gson();
-        System.out.println(gson.toJson(List));
-        model.addAttribute("usersList",gson.toJson(List));
-        return "fetchAll";
+        return gson.toJson(service.getAchieve(condition));
     }
 
     //获取特定标签内容
-    @RequestMapping("fetchTag/${tag}")
+    @RequestMapping("/fetchTag")
     @ResponseBody
-    public String fetchTag(@PathVariable String tag) {
+    public String fetchTag(@RequestBody String Json) {
 
-        return "";
+        Map<String,String> condition = new HashMap<>(2);
+        condition = gson.fromJson(Json,condition.getClass());
+        String json = gson.toJson(service.getAchieve(condition));
+        return gson.toJson(json);
+    }
+
+    //保存
+    @RequestMapping("/save")
+    @ResponseBody
+    public String save(@RequestBody String achieve){
+        try {
+            service.save(gson.fromJson(achieve,AchieveEntity.class));
+        } catch (JsonSyntaxException e) {
+            return "1";
+        }
+        return "0";
+    }
+
+    //删除
+    @RequestMapping("delete")
+    @ResponseBody
+    public String delete(@RequestBody String achieve){
+        try {
+            service.delete(gson.fromJson(achieve,AchieveEntity.class));
+        } catch (JsonSyntaxException e) {
+            return "1";
+        }
+        return "0";
     }
 }
 
